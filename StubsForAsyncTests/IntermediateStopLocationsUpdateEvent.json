@@ -1,0 +1,15 @@
+{
+  "event" : "intermediateStopLocationsChanged",
+  "data" : [
+    {
+      "lat" : 52.519485000000003,
+      "address" : "Friedrichstraße Station",
+      "lng" : 13.388237999999999
+    },
+    {
+      "address" : "Französische Straße Station",
+      "lat" : 52.514741999999998,
+      "lng" : 13.389485000000001
+    }
+  ]
+}

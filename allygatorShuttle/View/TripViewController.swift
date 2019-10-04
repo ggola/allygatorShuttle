@@ -24,6 +24,8 @@ class TripViewController: UIViewController {
     
     private var socket: WebSocket!
     
+    let dataParser = DataParser()
+    
     //MARK: - Ride global variables
     private var locationsLatitude = [Double]()
     private var locationsLongitude = [Double]()
@@ -169,23 +171,23 @@ extension TripViewController {
     private func updateUIForBookingOpened(with data: JSON) {
         setInitialUI()
         // Saves and shows pickup location
-        if let pickupLocation = DataParser.parseLocation(from: data, for: "pickupLocation") {
+        if let pickupLocation = dataParser.parseLocation(from: data, for: "pickupLocation") {
             updatePickupLocation(with: pickupLocation)
         }
         // Saves and shows drop off location
-        if let dropoffLocation = DataParser.parseLocation(from: data, for: "dropoffLocation") {
+        if let dropoffLocation = dataParser.parseLocation(from: data, for: "dropoffLocation") {
             updateDropoffLocation(with: dropoffLocation)
         }
         // Saves and shows initial vehicle location
-        if let vehicleLocation = DataParser.parseLocation(from: data, for: "vehicleLocation") {
+        if let vehicleLocation = dataParser.parseLocation(from: data, for: "vehicleLocation") {
             updateInitialVehicleLocation(with: vehicleLocation)
         }
         // Sets passenger status
-        if let status = data["data"]["status"].string {
+        if let status = dataParser.parsePassengerStatusBookingOpened(from: data) {
             updateInitialPassengerStatus(with: status)
         }
-        // Saves and shows intermediate Stop Locations
-        if let intermediateLocations = data["data"]["intermediateStopLocations"].array {
+        // Saves and shows intermediate stop locations
+        if let intermediateLocations = dataParser.parseIntermediateLocationsForBookingOpened(from: data) {
             updateInitialIntermediateLocations(with: intermediateLocations)
         }
 
@@ -245,7 +247,7 @@ extension TripViewController {
     // Handles UI updates for vehicle location updated events
     private func updateUIForVehicleLocationUpdated(with data: JSON) {
         // Vehicle location
-        if let updatedLocation = DataParser.parseVehicleLocation(from: data) {
+        if let updatedLocation = dataParser.parseVehicleLocation(from: data) {
             // Check if there is a current vehicle location
             if let currentLocation = currentVehicleLocation {
                 // Remove current vehicle marker from map and update vehicle bearing
@@ -274,7 +276,7 @@ extension TripViewController {
     // Handles UI updates for status updated events
     private func updateUIForStatusUpdated(with data: JSON) {
         // Retrieve current passenger status
-        if let status = data["data"].string {
+        if let status = dataParser.parsePassengerStatusUpdated(from: data) {
             currentPassengerStatus = status
             statusLabel.text = StatusManager.getLabel(for: status)
             statusImageView.image = StatusManager.getIcon(for: status)
@@ -284,9 +286,11 @@ extension TripViewController {
     
     // Handles UI updates for intermediate stop locations changed events
     private func updateUIForIntermediateStopLocationsChanged(with data: JSON) {
-        // Store new intermediate locations
-        intermediateStopLocationsJSON = data["data"].arrayValue
-        updateMapAndLabel()
+        if let intermediateLocations = dataParser.parseIntermediateLocationsForLocationsChanged(from: data) {
+            // Store new intermediate locations
+            intermediateStopLocationsJSON = intermediateLocations
+            updateMapAndLabel()
+        }
     }
     
     private func updateMapAndLabel() {
@@ -322,7 +326,7 @@ extension TripViewController {
     private func constructIntermediateStopLocations() {
         var isFirst = true
         for locationJSON in intermediateStopLocationsJSON {
-            if let location = DataParser.parseIntermediateLocation(from: locationJSON, isFirst: isFirst, passengerStatus: currentPassengerStatus) {
+            if let location = dataParser.parseIntermediateLocation(from: locationJSON, isFirst: isFirst, passengerStatus: currentPassengerStatus) {
                 intermediateStopLocations.append(location)
                 isFirst = false
             }

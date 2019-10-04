@@ -1,0 +1,8 @@
+{
+  "event" : "vehicleLocationUpdated",
+  "data" : {
+    "lat" : 52.520046627821515,
+    "lng" : 13.423404693603516,
+    "address" : null
+  }
+}

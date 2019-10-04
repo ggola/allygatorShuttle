@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TripViewController" customModule="allygatorShuttle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7BX-e1-NJy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="645"/>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next stop: address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0l-mF-Zcx">
-                                <rect key="frame" x="30" y="48" width="315" height="40"/>
+                                <rect key="frame" x="30" y="72" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.52549019607843139" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3mV-FE-4Qj"/>
@@ -37,7 +37,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-u2-otk" userLabel="Bearing View">
-                                <rect key="frame" x="147.5" y="437" width="80" height="80"/>
+                                <rect key="frame" x="147.66666666666666" y="548" width="80" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3H-kB-JKZ">
                                         <rect key="frame" x="30" y="5" width="20" height="20"/>
@@ -78,7 +78,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vehicle" translatesAutoresizingMaskIntoConstraints="NO" id="Mph-og-RqW">
-                                        <rect key="frame" x="27.5" y="27.5" width="25" height="25"/>
+                                        <rect key="frame" x="27.333333333333343" y="27.666666666666629" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="3oH-GL-6zR"/>
                                             <constraint firstAttribute="width" constant="25" id="o0J-3g-12z"/>
@@ -115,7 +115,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-5b-W1O" userLabel="Adresses Stack View">
-                                <rect key="frame" x="16" y="547" width="264" height="99"/>
+                                <rect key="frame" x="16" y="658" width="264" height="99"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="k2c-Ym-CRu" userLabel="Pick Up Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="264" height="40"/>
@@ -193,10 +193,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJG-yx-HHa" userLabel="Status Bkg View">
-                                <rect key="frame" x="281" y="534" width="94" height="133"/>
+                                <rect key="frame" x="281" y="645" width="94" height="133"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Ma-nb-Alk" userLabel="Status Stack View">
-                                        <rect key="frame" x="0.0" y="18" width="94" height="97"/>
+                                        <rect key="frame" x="0.0" y="25" width="94" height="98"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waiting" translatesAutoresizingMaskIntoConstraints="NO" id="Qy0-8Z-5ja" userLabel="Status Icon">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
@@ -206,10 +206,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nC8-4h-WPs" userLabel="Status Label">
-                                                <rect key="frame" x="0.0" y="60" width="94" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="37" id="9uR-Xg-8Hh"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="60" width="94" height="38"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -220,10 +217,10 @@
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.52549019607843139" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3Ma-nb-Alk" secondAttribute="trailing" id="EPY-7l-428"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Ma-nb-Alk" secondAttribute="bottom" constant="18" id="Pjs-zk-GGg"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Ma-nb-Alk" secondAttribute="bottom" constant="10" id="Pjs-zk-GGg"/>
                                     <constraint firstItem="3Ma-nb-Alk" firstAttribute="leading" secondItem="sJG-yx-HHa" secondAttribute="leading" id="bAl-YG-co5"/>
                                     <constraint firstAttribute="height" constant="133" id="f58-iB-KJt"/>
-                                    <constraint firstItem="3Ma-nb-Alk" firstAttribute="top" secondItem="sJG-yx-HHa" secondAttribute="top" constant="18" id="zO1-i7-lqt"/>
+                                    <constraint firstItem="3Ma-nb-Alk" firstAttribute="top" secondItem="sJG-yx-HHa" secondAttribute="top" constant="25" id="zO1-i7-lqt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -263,9 +260,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dropOffLocation" width="66.5" height="87"/>
-        <image name="pickUpLocation" width="66.5" height="87"/>
-        <image name="vehicle" width="34" height="66.5"/>
-        <image name="waiting" width="65" height="109.5"/>
+        <image name="dropOffLocation" width="66.666664123535156" height="87"/>
+        <image name="pickUpLocation" width="66.666664123535156" height="87"/>
+        <image name="vehicle" width="34.333332061767578" height="66.666664123535156"/>
+        <image name="waiting" width="65.333335876464844" height="109.66666412353516"/>
     </resources>
 </document>

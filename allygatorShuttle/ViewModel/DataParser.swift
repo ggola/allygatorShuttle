@@ -13,7 +13,7 @@ import CoreLocation
 struct DataParser {
     
     // Parses data based for objectLocation (event: bookingOpened). Returns Location object.
-    static func parseLocation(from data: JSON, for objectLocation: String) -> Location? {
+    func parseLocation(from data: JSON, for objectLocation: String) -> Location? {
         if let lat = data["data"][objectLocation]["lat"].double,
             let lng = data["data"][objectLocation]["lng"].double {
             // address can be nil
@@ -26,8 +26,26 @@ struct DataParser {
         }
     }
     
+    // Parses data for intermediate stop locations for booking opened event -> returns JSON objects array
+    func parseIntermediateLocationsForBookingOpened(from data: JSON) -> [JSON]? {
+        if let intermediateLocations = data["data"]["intermediateStopLocations"].array {
+            return intermediateLocations
+        } else {
+            return nil
+        }
+    }
+    
+    // Parses data for intermediate stop locations for intermediate stop locations changed event -> returns JSON objects array
+    func parseIntermediateLocationsForLocationsChanged(from data: JSON) -> [JSON]? {
+        if let intermediateLocations = data["data"].array {
+            return intermediateLocations
+        } else {
+            return nil
+        }
+    }
+    
     // Parses data for intermediate stop locations changes (event: intermediateStopLocationsChanged). Returns Location object.
-    static func parseIntermediateLocation(from data: JSON, isFirst: Bool, passengerStatus: String) -> Location? {
+    func parseIntermediateLocation(from data: JSON, isFirst: Bool, passengerStatus: String) -> Location? {
         if let lat = data["lat"].double,
             let lng = data["lng"].double {
             // address can be nil
@@ -45,7 +63,7 @@ struct DataParser {
     }
     
     // Parses data for vehicle locations updates (event: vehicleLocationUpdated). Returns Location object.
-    static func parseVehicleLocation(from data: JSON) -> Location? {
+    func parseVehicleLocation(from data: JSON) -> Location? {
         if let lat = data["data"]["lat"].double,
             let lng = data["data"]["lng"].double {
             // address can be nil
@@ -58,5 +76,21 @@ struct DataParser {
         }
     }
     
+    // Parses passenger status for booking opened event
+    func parsePassengerStatusBookingOpened(from data: JSON) -> String? {
+        if let status = data["data"]["status"].string {
+            return status
+        } else {
+            return nil
+        }
+    }
     
+    // Parses passenger status for status updated event
+    func parsePassengerStatusUpdated(from data: JSON) -> String? {
+        if let status = data["data"].string {
+            return status
+        } else {
+            return nil
+        }
+    }
 }

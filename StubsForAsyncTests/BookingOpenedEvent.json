@@ -1,0 +1,33 @@
+{
+  "event" : "bookingOpened",
+  "data" : {
+    "pickupLocation" : {
+      "lng" : 13.411632000000001,
+      "address" : "Volksbühne Berlin",
+      "lat" : 52.526629999999997
+    },
+    "status" : "waitingForPickup",
+    "dropoffLocation" : {
+      "lng" : 13.393208,
+      "address" : "Gendarmenmarkt",
+      "lat" : 52.513762999999997
+    },
+    "vehicleLocation" : {
+      "lng" : 13.426788999999999,
+      "address" : null,
+      "lat" : 52.519061000000001
+    },
+    "intermediateStopLocations" : [
+      {
+        "lng" : 13.399355999999999,
+        "address" : "The Sixties Diner",
+        "lat" : 52.523727999999998
+      },
+      {
+        "lng" : 13.388237999999999,
+        "address" : "Friedrichstraße Station",
+        "lat" : 52.519485000000003
+      }
+    ]
+  }
+}
