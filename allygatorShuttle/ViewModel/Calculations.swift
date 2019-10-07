@@ -6,26 +6,24 @@
 //  Copyright © 2019 Giulio Gola. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 
-
-
-
 struct Calculations {
+    
     // This function converts decimal degrees to radians
-    private static func deg2rad(deg: Double) -> Double {
+    private func deg2rad(deg: Double) -> Double {
         return deg * Double.pi / 180
     }
     
     // This function converts radians to decimal degrees
-    private static func rad2deg(rad: Double) -> Double {
+    private func rad2deg(rad: Double) -> Double {
         return rad * 180.0 / Double.pi
     }
     
     // Calculate distance between two points with lat and lng
     // https://www.movable-type.co.uk/scripts/latlong.html
-    private static func calculateFor(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
+    func calculateFor(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
         let R = 6371000.0 // earth avg radius in metres
         let φ1 = deg2rad(deg: lat1)
         let φ2 = deg2rad(deg: lat2)
@@ -37,14 +35,14 @@ struct Calculations {
     }
     
     // Find map center
-    static func findMapCenter(lats: [Double], lngs: [Double]) -> CLLocationCoordinate2D {
+    func findMapCenter(lats: [Double], lngs: [Double]) -> CLLocationCoordinate2D {
         let initialLatitude = lats.reduce(0, +) / Double(lats.count)
         let initialLongitude = lngs.reduce(0, +) / Double(lngs.count)
         return CLLocationCoordinate2D(latitude: initialLatitude, longitude: initialLongitude)
     }
     
     // Find region initial span
-    static func calculateRegionSpan(lats: [Double], lngs: [Double]) -> Double {
+    func calculateRegionSpan(lats: [Double], lngs: [Double]) -> Double {
         let factor = 1.5
         
         let maxLat = lats.max()
@@ -70,7 +68,7 @@ struct Calculations {
     }
     
     // Return the bearing of an object moving from point1 to point2
-    static func getBearingBetweenTwoPoints(point1 : CLLocation, point2 : CLLocation) -> Double {
+    func getBearingBetweenTwoPoints(point1 : CLLocation, point2 : CLLocation) -> Double {
         
         let lat1 = deg2rad(deg: point1.coordinate.latitude)
         let lon1 = deg2rad(deg: point1.coordinate.longitude)

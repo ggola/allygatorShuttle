@@ -13,6 +13,12 @@ import SwiftyJSON
 
 class TripViewController: UIViewController {
     
+    let dataParser = DataParser()
+    let statusManager = StatusManager()
+    let calculations = Calculations()
+    
+    private var socket: WebSocket!
+    
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var nextStopLabel: UILabel!
@@ -21,10 +27,6 @@ class TripViewController: UIViewController {
     @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!    
     @IBOutlet weak var vehicleBearingImageView: UIImageView!
-    
-    private var socket: WebSocket!
-    
-    let dataParser = DataParser()
     
     //MARK: - Ride global variables
     private var locationsLatitude = [Double]()
@@ -64,9 +66,9 @@ extension TripViewController: MKMapViewDelegate {
     // Center map at the beginning
     private func centerMap() {
         // Finds most suitable region span to show in map
-        let regionSpanInMeters = Calculations.calculateRegionSpan(lats: locationsLatitude, lngs: locationsLongitude)
+        let regionSpanInMeters = calculations.calculateRegionSpan(lats: locationsLatitude, lngs: locationsLongitude)
         // Set map center
-        let initialLocation = Calculations.findMapCenter(lats: locationsLatitude, lngs: locationsLongitude)
+        let initialLocation = calculations.findMapCenter(lats: locationsLatitude, lngs: locationsLongitude)
         let mapCenter = CLLocation(latitude: initialLocation.latitude, longitude: initialLocation.longitude)
         let coordinateRegion = MKCoordinateRegion(center: mapCenter.coordinate, latitudinalMeters: regionSpanInMeters, longitudinalMeters: regionSpanInMeters)
         mapView.setRegion(coordinateRegion, animated: true)
@@ -171,19 +173,19 @@ extension TripViewController {
     private func updateUIForBookingOpened(with data: JSON) {
         setInitialUI()
         // Saves and shows pickup location
-        if let pickupLocation = dataParser.parseLocation(from: data, for: "pickupLocation") {
+        if let pickupLocation = dataParser.parseLocationForBookingOpened(from: data, for: "pickupLocation") {
             updatePickupLocation(with: pickupLocation)
         }
         // Saves and shows drop off location
-        if let dropoffLocation = dataParser.parseLocation(from: data, for: "dropoffLocation") {
+        if let dropoffLocation = dataParser.parseLocationForBookingOpened(from: data, for: "dropoffLocation") {
             updateDropoffLocation(with: dropoffLocation)
         }
         // Saves and shows initial vehicle location
-        if let vehicleLocation = dataParser.parseLocation(from: data, for: "vehicleLocation") {
+        if let vehicleLocation = dataParser.parseLocationForBookingOpened(from: data, for: "vehicleLocation") {
             updateInitialVehicleLocation(with: vehicleLocation)
         }
         // Sets passenger status
-        if let status = dataParser.parsePassengerStatusBookingOpened(from: data) {
+        if let status = dataParser.parsePassengerStatusForBookingOpened(from: data) {
             updateInitialPassengerStatus(with: status)
         }
         // Saves and shows intermediate stop locations
@@ -229,8 +231,8 @@ extension TripViewController {
     
     private func updateInitialPassengerStatus(with status: String) {
         currentPassengerStatus = status
-        statusLabel.text = StatusManager.getLabel(for: status)
-        statusImageView.image = StatusManager.getIcon(for: status)
+        statusLabel.text = statusManager.getLabel(for: status)
+        statusImageView.image = statusManager.getIcon(for: status)
         // Set next stop label
         setNextStopLabel(for: currentPassengerStatus)
     }
@@ -265,7 +267,7 @@ extension TripViewController {
     private func updateVehicleBearing(withCurrentLocation currentLoc: Location, andUpdatedLocation updatedLoc: Location) {
         let currentVehiclePosition = CLLocation(latitude: currentLoc.latitude, longitude: currentLoc.longitude)
         let updatedVehiclePosition = CLLocation(latitude: updatedLoc.latitude, longitude: updatedLoc.longitude)
-        let updatedBearing = Calculations.getBearingBetweenTwoPoints(point1: currentVehiclePosition, point2: updatedVehiclePosition)
+        let updatedBearing = calculations.getBearingBetweenTwoPoints(point1: currentVehiclePosition, point2: updatedVehiclePosition)
         // Store bearing difference and update current bearing value
         bearingShift = updatedBearing - currentBearing
         currentBearing = updatedBearing
@@ -278,8 +280,8 @@ extension TripViewController {
         // Retrieve current passenger status
         if let status = dataParser.parsePassengerStatusUpdated(from: data) {
             currentPassengerStatus = status
-            statusLabel.text = StatusManager.getLabel(for: status)
-            statusImageView.image = StatusManager.getIcon(for: status)
+            statusLabel.text = statusManager.getLabel(for: status)
+            statusImageView.image = statusManager.getIcon(for: status)
             updateMapAndLabel()
         }
     }

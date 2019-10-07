@@ -10,7 +10,7 @@ import UIKit
 
 struct LocationManager {
     
-    static func getLocationType(from object: String) -> String {
+    func getLocationType(from object: String) -> String {
         switch object {
         case "pickupLocation":
             return "Pick up"
@@ -23,7 +23,7 @@ struct LocationManager {
         }
     }
     
-    static func getLocationIcon(from object: String) -> UIImage? {
+    func getLocationIcon(from object: String) -> UIImage? {
         switch object {
         case "pickupLocation":
             return UIImage(named: "pickUpLocation") ?? nil
@@ -36,23 +36,23 @@ struct LocationManager {
         }
     }
     
-    static func getIntermediateLocationType() -> String {
+    func getIntermediateLocationType() -> String {
         return "Intermediate stop"
     }
     
-    static func getIntermediateLocationIcon() -> UIImage? {
+    func getIntermediateLocationIcon() -> UIImage? {
         return UIImage(named: "intermediateLocation")
     }
     
-    static func getIntermediateLocationFirstIcon() -> UIImage? {
+    func getIntermediateLocationFirstIcon() -> UIImage? {
         return UIImage(named: "intermediateLocationFirst")
     }
     
-    static func getVehicleUpdatesType() -> String {
+    func getVehicleUpdatesType() -> String {
         return "Vehicle"
     }
     
-    static func getVehicleUpdatesIcon() -> UIImage? {
+    func getVehicleUpdatesIcon() -> UIImage? {
         return UIImage(named: "vehicle")
     }
     

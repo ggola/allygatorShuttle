@@ -11,7 +11,7 @@ import UIKit
 struct StatusManager {
     
     // Returns status label based on status retrieved from the server
-    static func getLabel(for status: String) -> String {
+    func getLabel(for status: String) -> String {
         switch status {
         case "waitingForPickup":
             return "Waiting"
@@ -25,7 +25,7 @@ struct StatusManager {
     }
     
     // Returns status icon based on status retrieved from the server
-    static func getIcon(for status: String) -> UIImage? {
+    func getIcon(for status: String) -> UIImage? {
         switch status {
         case "waitingForPickup":
             return UIImage(named: "waiting") ?? nil

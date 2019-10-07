@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AB455AF38D30085574406832 /* Pods_allygatorShuttleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20CF9476F7C794B1CB904EC /* Pods_allygatorShuttleTests.framework */; };
 		B40B01CD2344FF6B00654E76 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40B01CC2344FF6B00654E76 /* LocationView.swift */; };
+		B443573B234B56E600079AF0 /* StatusManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443573A234B56E600079AF0 /* StatusManagerTests.swift */; };
+		B443573D234B5AC900079AF0 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443573C234B5AC900079AF0 /* LocationManagerTests.swift */; };
+		B443573F234B629F00079AF0 /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443573E234B629F00079AF0 /* CalculationsTests.swift */; };
 		B44492A62344A2010083866E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44492A52344A2010083866E /* Status.swift */; };
 		B44492A82344C1DB0083866E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44492A72344C1DB0083866E /* Location.swift */; };
 		B48849D92343C4C500484CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48849D82343C4C500484CA7 /* AppDelegate.swift */; };
@@ -23,15 +26,21 @@
 		B4C881612345A114004BC4C9 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C881602345A114004BC4C9 /* DataParser.swift */; };
 		B4C881632345A6B8004BC4C9 /* StatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C881622345A6B8004BC4C9 /* StatusManager.swift */; };
 		B4C881652345A6C5004BC4C9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C881642345A6C5004BC4C9 /* LocationManager.swift */; };
-		B4CE0F8323478C29005FDE5D /* IntermediateStopLocationsUpdateEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsUpdateEvent.json */; };
+		B4CE0F8323478C29005FDE5D /* IntermediateStopLocationsChangeEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsChangeEvent.json */; };
 		B4CE0F8423478C29005FDE5D /* BookingOpenedEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F7F23478C28005FDE5D /* BookingOpenedEvent.json */; };
-		B4CE0F8523478C29005FDE5D /* BookingClosedEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F8023478C28005FDE5D /* BookingClosedEvent.json */; };
 		B4CE0F8623478C29005FDE5D /* StatusUpdateEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F8123478C29005FDE5D /* StatusUpdateEvent.json */; };
 		B4CE0F8723478C29005FDE5D /* VehicleLocationUpdateEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B4CE0F8223478C29005FDE5D /* VehicleLocationUpdateEvent.json */; };
 		C091C51A207C2A39C5CD4860 /* Pods_allygatorShuttle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C32C35BDE9B40CE4C03F55 /* Pods_allygatorShuttle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B4097D80234A57D000BA3F9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B48849CD2343C4C400484CA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B48849D42343C4C500484CA7;
+			remoteInfo = allygatorShuttle;
+		};
 		B48849EA2343C4C700484CA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B48849CD2343C4C400484CA7 /* Project object */;
@@ -47,7 +56,11 @@
 		6A993CB382165B3CF5654A6D /* Pods-allygatorShuttle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allygatorShuttle.debug.xcconfig"; path = "Target Support Files/Pods-allygatorShuttle/Pods-allygatorShuttle.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5EDD447B1F871776C23A05 /* Pods-allygatorShuttle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allygatorShuttle.release.xcconfig"; path = "Target Support Files/Pods-allygatorShuttle/Pods-allygatorShuttle.release.xcconfig"; sourceTree = "<group>"; };
 		B0C32C35BDE9B40CE4C03F55 /* Pods_allygatorShuttle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allygatorShuttle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4097D7B234A57D000BA3F9D /* StatusManagerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusManagerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40B01CC2344FF6B00654E76 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		B443573A234B56E600079AF0 /* StatusManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManagerTests.swift; sourceTree = "<group>"; };
+		B443573C234B5AC900079AF0 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		B443573E234B629F00079AF0 /* CalculationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		B44492A52344A2010083866E /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B44492A72344C1DB0083866E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		B48849D52343C4C500484CA7 /* allygatorShuttle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = allygatorShuttle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,15 +79,21 @@
 		B4C881602345A114004BC4C9 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		B4C881622345A6B8004BC4C9 /* StatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManager.swift; sourceTree = "<group>"; };
 		B4C881642345A6C5004BC4C9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsUpdateEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = IntermediateStopLocationsUpdateEvent.json; path = StubsForAsyncTests/IntermediateStopLocationsUpdateEvent.json; sourceTree = SOURCE_ROOT; };
+		B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsChangeEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = IntermediateStopLocationsChangeEvent.json; path = StubsForAsyncTests/IntermediateStopLocationsChangeEvent.json; sourceTree = SOURCE_ROOT; };
 		B4CE0F7F23478C28005FDE5D /* BookingOpenedEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BookingOpenedEvent.json; path = StubsForAsyncTests/BookingOpenedEvent.json; sourceTree = SOURCE_ROOT; };
-		B4CE0F8023478C28005FDE5D /* BookingClosedEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BookingClosedEvent.json; path = StubsForAsyncTests/BookingClosedEvent.json; sourceTree = SOURCE_ROOT; };
 		B4CE0F8123478C29005FDE5D /* StatusUpdateEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = StatusUpdateEvent.json; path = StubsForAsyncTests/StatusUpdateEvent.json; sourceTree = SOURCE_ROOT; };
 		B4CE0F8223478C29005FDE5D /* VehicleLocationUpdateEvent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = VehicleLocationUpdateEvent.json; path = StubsForAsyncTests/VehicleLocationUpdateEvent.json; sourceTree = SOURCE_ROOT; };
 		D20CF9476F7C794B1CB904EC /* Pods_allygatorShuttleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allygatorShuttleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B4097D78234A57D000BA3F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B48849D22343C4C500484CA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +190,7 @@
 			children = (
 				B48849D52343C4C500484CA7 /* allygatorShuttle.app */,
 				B48849E92343C4C700484CA7 /* allygatorShuttleTests.xctest */,
+				B4097D7B234A57D000BA3F9D /* StatusManagerTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +211,9 @@
 		B48849EC2343C4C700484CA7 /* allygatorShuttleTests */ = {
 			isa = PBXGroup;
 			children = (
+				B443573E234B629F00079AF0 /* CalculationsTests.swift */,
+				B443573C234B5AC900079AF0 /* LocationManagerTests.swift */,
+				B443573A234B56E600079AF0 /* StatusManagerTests.swift */,
 				B4CE0F7D23478C09005FDE5D /* DataParserTestData */,
 				B48849ED2343C4C700484CA7 /* DataParserTests.swift */,
 				B48849EF2343C4C700484CA7 /* Info.plist */,
@@ -201,9 +224,8 @@
 		B4CE0F7D23478C09005FDE5D /* DataParserTestData */ = {
 			isa = PBXGroup;
 			children = (
-				B4CE0F8023478C28005FDE5D /* BookingClosedEvent.json */,
 				B4CE0F7F23478C28005FDE5D /* BookingOpenedEvent.json */,
-				B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsUpdateEvent.json */,
+				B4CE0F7E23478C28005FDE5D /* IntermediateStopLocationsChangeEvent.json */,
 				B4CE0F8123478C29005FDE5D /* StatusUpdateEvent.json */,
 				B4CE0F8223478C29005FDE5D /* VehicleLocationUpdateEvent.json */,
 			);
@@ -213,6 +235,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B4097D7A234A57D000BA3F9D /* StatusManagerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4097D82234A57D000BA3F9D /* Build configuration list for PBXNativeTarget "StatusManagerTest" */;
+			buildPhases = (
+				B4097D77234A57D000BA3F9D /* Sources */,
+				B4097D78234A57D000BA3F9D /* Frameworks */,
+				B4097D79234A57D000BA3F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4097D81234A57D000BA3F9D /* PBXTargetDependency */,
+			);
+			name = StatusManagerTest;
+			productName = StatusManagerTest;
+			productReference = B4097D7B234A57D000BA3F9D /* StatusManagerTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B48849D42343C4C500484CA7 /* allygatorShuttle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B48849F22343C4C700484CA7 /* Build configuration list for PBXNativeTarget "allygatorShuttle" */;
@@ -261,6 +301,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Giulio Gola";
 				TargetAttributes = {
+					B4097D7A234A57D000BA3F9D = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B48849D42343C4C500484CA7;
+					};
 					B48849D42343C4C500484CA7 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -285,11 +329,19 @@
 			targets = (
 				B48849D42343C4C500484CA7 /* allygatorShuttle */,
 				B48849E82343C4C700484CA7 /* allygatorShuttleTests */,
+				B4097D7A234A57D000BA3F9D /* StatusManagerTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B4097D79234A57D000BA3F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B48849D32343C4C500484CA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,8 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4CE0F8523478C29005FDE5D /* BookingClosedEvent.json in Resources */,
-				B4CE0F8323478C29005FDE5D /* IntermediateStopLocationsUpdateEvent.json in Resources */,
+				B4CE0F8323478C29005FDE5D /* IntermediateStopLocationsChangeEvent.json in Resources */,
 				B4CE0F8423478C29005FDE5D /* BookingOpenedEvent.json in Resources */,
 				B4CE0F8723478C29005FDE5D /* VehicleLocationUpdateEvent.json in Resources */,
 				B4CE0F8623478C29005FDE5D /* StatusUpdateEvent.json in Resources */,
@@ -379,6 +430,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B4097D77234A57D000BA3F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B48849D12343C4C500484CA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,13 +459,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B443573D234B5AC900079AF0 /* LocationManagerTests.swift in Sources */,
 				B48849EE2343C4C700484CA7 /* DataParserTests.swift in Sources */,
+				B443573B234B56E600079AF0 /* StatusManagerTests.swift in Sources */,
+				B443573F234B629F00079AF0 /* CalculationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B4097D81234A57D000BA3F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B48849D42343C4C500484CA7 /* allygatorShuttle */;
+			targetProxy = B4097D80234A57D000BA3F9D /* PBXContainerItemProxy */;
+		};
 		B48849EB2343C4C700484CA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B48849D42343C4C500484CA7 /* allygatorShuttle */;
@@ -435,6 +501,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B4097D83234A57D000BA3F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 57MX4FQHZP;
+				INFOPLIST_FILE = StatusManagerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = giuliogola.StatusManagerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/allygatorShuttle.app/allygatorShuttle";
+			};
+			name = Debug;
+		};
+		B4097D84234A57D000BA3F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 57MX4FQHZP;
+				INFOPLIST_FILE = StatusManagerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = giuliogola.StatusManagerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/allygatorShuttle.app/allygatorShuttle";
+			};
+			name = Release;
+		};
 		B48849F02343C4C700484CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -636,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B4097D82234A57D000BA3F9D /* Build configuration list for PBXNativeTarget "StatusManagerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4097D83234A57D000BA3F9D /* Debug */,
+				B4097D84234A57D000BA3F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B48849D02343C4C400484CA7 /* Build configuration list for PBXProject "allygatorShuttle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
